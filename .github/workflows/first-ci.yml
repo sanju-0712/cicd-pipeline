@@ -1,6 +1,6 @@
 name: my first ci pipeline
 
-on: push
+on: workflow_dispatch
 
 jobs:
   build:
@@ -10,33 +10,7 @@ jobs:
       - name: Checkout source code
         uses: actions/checkout@v4
 
-      - name: Check files
-        run: ls -la
-
-      - name: Install dependencies
-        run: |
-          echo "Installing dependencies..."
-          echo "npm install"
-
-  tests:
-    needs: build
-    runs-on: ubuntu-latest
-     
-    steps:
-
-      - name: Run tests
-        run: |
-          echo "Running unit tests..."
-          echo "npm test"
-
-  deploy:
-    needs: tests
-    runs-on: ubuntu-latest
-     
-    steps:
-
-      - name: deploy the application
-        run: |
-          echo "deploy the application..."
-          echo "npm run build"
+      - name: welcome message
+        run: echo "hello world"
+        
  
