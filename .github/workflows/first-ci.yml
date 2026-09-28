@@ -1,9 +1,8 @@
 name: my first ci pipeline
 on:
- push:
-    - main
+ push
 jobs:
-  first-job
+  first-job:
     runs-on: ubuntu-latest
     steps:
      - name: welcome message
