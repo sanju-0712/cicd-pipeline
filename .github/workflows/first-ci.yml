@@ -1,0 +1,14 @@
+name: my first ci pipeline
+on:
+ push:
+    - main
+jobs:
+  first-job
+    runs-on: ubuntu-latest
+    steps:
+     - name: welcome message
+       run: echo " hello world "
+
+     - name: list the files
+       run: ls
+  
